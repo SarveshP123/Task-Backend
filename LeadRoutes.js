@@ -1,0 +1,16 @@
+const express=require("express")
+const router=express.Router()
+const{createLead,getLead,getsinglelead,updateLead,deleteLead,getLeadbyuser,searchbyname,getLeadbyLeadName, getLeadbyStatus, getLeadsBetweenDates, updateLeadDescription}=require("../Controllers/LeadControllers")
+
+router.post("/post/api",createLead)
+router.post("/get/api",getLead)
+router.post("/getbyid/api/:id",getsinglelead)
+// router.post("/getLeadbyuser/api",getLeadbyuser)
+router.post("/getLeadbyLeadName/api",getLeadbyLeadName)
+router.post("/update/api/:id",updateLead)
+router.post("/delete/api/:id",deleteLead)
+router.post("/getLeadByStatus/api",getLeadbyStatus)
+router.post("/getLeadsBetweenDates/api",getLeadsBetweenDates)
+router.post("/searchbyname/api",searchbyname)
+router.post("/updateLeadDescription/api/:id",updateLeadDescription)
+module.exports=router
